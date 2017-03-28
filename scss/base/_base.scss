@@ -1,0 +1,279 @@
+
+// Typography ///////////////////////////////////
+
+body {
+  font-family: $primary;
+  background-color: $dirtywhite;
+}
+
+h1 {
+  @extend %primaryHeadlines;
+}
+
+h2 {
+  @extend %secondaryHeadlines;
+  color: $lightgray;
+  font-family: $secondary;
+  text-transform: uppercase;
+  letter-spacing: .05rem;
+  padding: 4rem 0 .5rem 0;
+}
+
+h3 {
+  @extend %thirdHeadlines;
+}
+
+p {
+  @include primaryParagraphs;
+}
+
+
+
+
+// Links Global ///////////////////////////////////
+a,
+a:visited,
+a:link {
+  @include primaryLinks;
+}
+
+a:hover {
+  @extend a;
+    @media screen and (min-width: $tabletBREAK) {
+      color: $turqouise;
+    }
+}
+
+
+
+
+// Header ///////////////////////////////////
+header {
+  margin-top: 3rem;
+
+    p {
+      padding: 2rem 2rem;
+        @media screen and (min-width: $tabletBREAK) {
+          @include twoColumns;
+          float: left;
+          text-align: left;
+          font-size: 1.2rem;
+        }
+    }
+}
+
+
+
+
+// Profile ///////////////////////////////////
+.profile-image {
+  max-width: 60%;
+
+    @media screen and (min-width: $tabletBREAK) {
+      @include twoColumns;
+      float: right;
+    }
+}
+
+
+
+
+// Portfolio ///////////////////////////////////
+.portfolio {
+  background-color: $white;
+  width: 100%;
+
+    h3 {
+      padding: 1rem 0 .5rem 0;
+    }
+
+    li {
+      @include centered;
+      max-width: 90%;
+      margin-top: 3rem;
+        @media screen and (min-width: $tabletBREAK) {
+          @include twoColumns;
+          float: left;
+      }
+        @media screen and (min-width: $desktopBREAK) {
+          @include notCentered;
+          width: 31.33333%;
+          padding-left: 1%;
+          padding-right: 1%;
+          float: left;
+      }
+    }
+
+    li:last-child {
+      padding-bottom: 3rem; }
+
+    img {
+      max-width: 100%; }
+}
+
+
+
+// Skills ///////////////////////////////////
+.skills {
+  background-color: $turqouise;
+  color: $white;
+
+    h2 {
+      color: $yellowgold;
+      padding-bottom: 2em;
+    }
+
+    li {
+      line-height: 2rem;
+    }
+
+    ul {
+      padding-bottom: 3rem;
+    }
+
+}
+
+
+
+
+
+// Footer ///////////////////////////////////
+
+footer {
+  margin-top: 1rem;
+  padding: 2rem 0;
+  overflow: auto;
+    @media screen and (min-width: $desktopBREAK) {
+      @include centered;
+      width: 90%;
+  }
+
+    li {
+      display: inline;
+      float: left;
+      padding-left: 1rem;
+    }
+
+    li:last-child {
+      float: right;
+      padding-right: 1rem;
+    }
+}
+
+
+
+// Navigation ///////////////////////////////////
+
+nav {
+  background-color: $turqouise;
+  color: $white;
+
+    ul {
+      @media screen and (min-width: $desktopBREAK) {
+      float: right;
+      }
+    }
+
+    li {
+      @include centered;
+      margin-top: 2px;
+      padding: 10px 0px;
+      background-color: $white;
+      color: inherit;
+      width: 70%;
+        @media screen and (min-width: $tabletBREAK) {
+        display: inline-block;
+        background-color: $transparent;
+        padding: 0 1rem 1rem 1rem;
+        width: 10%;
+      }
+        @media screen and (min-width: $desktopBREAK) {
+        float: left;
+        background-color: $transparent;
+        width: auto;
+        padding: 1.5rem 2rem 1.5rem 0rem;
+      }
+
+      @media screen and (min-width: $tabletBREAK) {
+        a,
+        a:visited,
+        a:link,
+        a:hover {
+          @include primaryLinks;
+          color: $white;
+        }
+        a:hover {
+          color: $rosered;
+        }
+      }
+    }
+}
+
+
+
+.clearfix {
+  overflow: auto;
+}
+
+
+.wrapper {
+  @include centered;
+  text-align: center;
+  width: 90%;
+    @media screen and (min-width: $tabletBREAK) {
+      width: 100%;
+    }
+    @media screen and (min-width: $desktopBREAK) {
+      width: $desktopBREAK;
+    }
+}
+
+
+
+.contact {
+    @media screen and (min-width: $tabletBREAK) {
+      p {
+      width: 40%;
+      @include centered;
+      }
+    }
+      h2 {
+        padding-bottom: 2em;
+      }
+}
+
+
+
+  .name,
+  .float-left {
+    @media screen and (min-width: $desktopBREAK) {
+    float: left;
+    }
+  }
+
+  .float-right {
+    @media screen and (min-width: $desktopBREAK) {
+    float: right;
+    }
+  }
+
+
+
+.border {
+  @extend %primaryBorder;
+}
+
+
+
+.desktop {
+  display: none;
+  @media screen and (min-width: $desktopBREAK) {
+    display: inline;
+  }
+}
+
+.mobile {
+  @media screen and (min-width: $desktopBREAK) {
+    display: none;
+  }
+}
